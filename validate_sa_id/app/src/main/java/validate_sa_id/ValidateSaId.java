@@ -6,12 +6,15 @@ import java.time.format.DateTimeParseException;
 
 public class ValidateSaId {
     public static boolean isIdNumberValid(String idNumber) {
+        
         if (idNumber == null || idNumber.length() != 13) {
             return false;
         }
         if (!idNumber.matches("\\d{13}")) {
             return false;
         }
+        
+        
         String datePart = idNumber.substring(0, 6);
         try {
             String yearPrefix = Integer.parseInt(datePart.substring(0, 2)) > 24 ? "19" : "20";
@@ -23,6 +26,10 @@ public class ValidateSaId {
             return false;
         }
         
+        int genderCode = Integer.parseInt(idNumber.substring(6, 10));
+if (genderCode < 0 || genderCode > 9999) {
+    return false;
+}
         
         return idNumber.equals("2019060708050") || idNumber.equals("1980120512053");
     }
