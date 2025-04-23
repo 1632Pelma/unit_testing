@@ -42,4 +42,10 @@ public void testCitizenshipAndFixedDigit() {
     assertFalse(ValidateSaId.isIdNumberValid("2001014800026"), "Invalid citizenship (2) should fail");
     assertFalse(ValidateSaId.isIdNumberValid("2001014800096"), "Invalid fixed digit (9) should fail");
 }
+
+@Test
+public void testChecksum() {
+    assertTrue(ValidateSaId.isIdNumberValid("2001014800086"), "Valid checksum should pass");
+    assertFalse(ValidateSaId.isIdNumberValid("2001014800085"), "Invalid checksum should fail");
+}
 }
