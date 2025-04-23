@@ -34,4 +34,12 @@ public void testGender() {
     assertTrue(ValidateSaId.isIdNumberValid("2001015800084"), "Male ID (5800) should be valid");
     assertFalse(ValidateSaId.isIdNumberValid("2001019999086"), "Invalid gender (9999) needs valid checksum");
 }
+
+@Test
+public void testCitizenshipAndFixedDigit() {
+    assertTrue(ValidateSaId.isIdNumberValid("2001014800086"), "Citizen (0) should be valid");
+    assertTrue(ValidateSaId.isIdNumberValid("2001014800184"), "Permanent resident (1) should be valid");
+    assertFalse(ValidateSaId.isIdNumberValid("2001014800026"), "Invalid citizenship (2) should fail");
+    assertFalse(ValidateSaId.isIdNumberValid("2001014800096"), "Invalid fixed digit (9) should fail");
+}
 }
