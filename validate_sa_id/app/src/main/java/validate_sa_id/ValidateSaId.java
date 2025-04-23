@@ -40,7 +40,7 @@ if (citizenship != '0' && citizenship != '1') {
 
 // Validate fixed digit (A), typically 8
 char fixedDigit = idNumber.charAt(11);
-if (fixedDigit != '8') {
+if (fixedDigit != '9') {
     return false;
 }
 
@@ -61,7 +61,7 @@ for (int i = 12; i >= 0; i--) {
 if (sum % 10 != 0) {
     return false;
 }
-        
+      
         return true;
     }
 }
