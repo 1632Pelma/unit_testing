@@ -22,4 +22,11 @@ public void testNonNumeric() {
     assertFalse(ValidateSaId.isIdNumberValid("200101480008a"), "ID with letters should be invalid");
     assertFalse(ValidateSaId.isIdNumberValid("200101480008@"), "ID with symbols should be invalid");
 }
+@Test
+public void testInvalidDate() {
+    assertFalse(ValidateSaId.isIdNumberValid("9913314800080"), "Invalid month 13 should fail");
+    assertFalse(ValidateSaId.isIdNumberValid("9902324800086"), "Invalid day 32 should fail");
+    assertFalse(ValidateSaId.isIdNumberValid("0000004800086"), "Invalid date 000000 should fail");
+}
+
 }
