@@ -16,4 +16,10 @@ public void testInvalidLength() {
     assertFalse(ValidateSaId.isIdNumberValid("02052503061225"), "ID with 14 digits should be invalid");
     assertFalse(ValidateSaId.isIdNumberValid(""), "Empty ID should be invalid");
 }
+
+@Test
+public void testNonNumeric() {
+    assertFalse(ValidateSaId.isIdNumberValid("200101480008a"), "ID with letters should be invalid");
+    assertFalse(ValidateSaId.isIdNumberValid("200101480008@"), "ID with symbols should be invalid");
+}
 }
