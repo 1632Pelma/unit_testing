@@ -28,5 +28,10 @@ public void testInvalidDate() {
     assertFalse(ValidateSaId.isIdNumberValid("9902324800086"), "Invalid day 32 should fail");
     assertFalse(ValidateSaId.isIdNumberValid("0000004800086"), "Invalid date 000000 should fail");
 }
-
+@Test
+public void testGender() {
+    assertTrue(ValidateSaId.isIdNumberValid("2001014800086"), "Female ID (4800) should be valid");
+    assertTrue(ValidateSaId.isIdNumberValid("2001015800084"), "Male ID (5800) should be valid");
+    assertFalse(ValidateSaId.isIdNumberValid("2001019999086"), "Invalid gender (9999) needs valid checksum");
+}
 }
