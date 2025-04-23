@@ -43,7 +43,25 @@ char fixedDigit = idNumber.charAt(11);
 if (fixedDigit != '8') {
     return false;
 }
+
+// Validate checksum (Z) using Luhn algorithm
+int sum = 0;
+boolean alternate = false;
+for (int i = 12; i >= 0; i--) {
+    int n = Character.getNumericValue(idNumber.charAt(i));
+    if (alternate) {
+        n *= 2;
+        if (n > 9) {
+            n = (n % 10) + 1;
+        }
+    }
+    sum += n;
+    alternate = !alternate;
+}
+if (sum % 10 != 0) {
+    return false;
+}
         
-        return idNumber.equals("2019060708050") || idNumber.equals("1980120512053");
+        return true;
     }
 }
