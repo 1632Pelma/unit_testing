@@ -38,7 +38,7 @@ if (citizenship != '0' && citizenship != '1') {
     return false;
 }
 
-// Validate fixed digit (A), typically 8
+// Validate fixed digit (A)
 char fixedDigit = idNumber.charAt(11);
 if (fixedDigit != '8') {
     return false;
