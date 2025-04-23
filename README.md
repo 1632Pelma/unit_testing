@@ -23,8 +23,8 @@ The project consists of three main files:
 - Comprehensive unit tests ensuring 100% pass rate for all validation criteria.
 
 ## DEMO
-![Valid ID NUmber](images/GUI.png)
-![Invalid ID Number](images/GUI1.png)
+![Valid ID NUmber](images/valid.png)
+![Invalid ID Number](images/invalid.png)
 
 ## Setup Instructions
 
