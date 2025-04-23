@@ -1,4 +1,5 @@
 plugins {
+    id 'java'
     id 'application'
 }
 
@@ -7,23 +8,13 @@ repositories {
 }
 
 dependencies {
-    testImplementation libs.junit.jupiter
-
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
-    implementation libs.guava
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
 }
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
+test {
+    useJUnitPlatform()
 }
 
 application {
     mainClass = 'validate_sa_id.App'
-}
-
-tasks.named('test') {
-    useJUnitPlatform()
 }
