@@ -6,7 +6,7 @@ import java.time.format.DateTimeParseException;
 
 public class ValidateSaId {
     public static boolean isIdNumberValid(String idNumber) {
-        
+        // Validate that ID number contains 13 digits
         if (idNumber == null || idNumber.length() != 13) {
             return false;
         }
@@ -14,7 +14,7 @@ public class ValidateSaId {
             return false;
         }
         
-        
+        // Validate date entered and ensures no future date is chosen
         String datePart = idNumber.substring(0, 6);
         try {
             String yearPrefix = Integer.parseInt(datePart.substring(0, 2)) > 24 ? "19" : "20";
@@ -26,8 +26,21 @@ public class ValidateSaId {
             return false;
         }
         
+        // Validate Gender
         int genderCode = Integer.parseInt(idNumber.substring(6, 10));
 if (genderCode < 0 || genderCode > 9999) {
+    return false;
+}
+
+// Validate citizenship (C)
+char citizenship = idNumber.charAt(10);
+if (citizenship != '0' && citizenship != '1') {
+    return false;
+}
+
+// Validate fixed digit (A), typically 8
+char fixedDigit = idNumber.charAt(11);
+if (fixedDigit != '8') {
     return false;
 }
         
