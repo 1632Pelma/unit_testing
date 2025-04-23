@@ -13,7 +13,7 @@ The application validates South African ID numbers (13 digits, format YYMMDDSSSS
 - **Checksum**: Z (validated using the Luhn algorithm).
 
 The project consists of three main files:
-- `ValidateSaId.java`: Contains the validation logic, returning a `ValidationResult` with detailed feedback.
+- `ValidateSaId.java`: Contains the validation logic, returning a `ValidationResult` with feedback.
 - `ValidateSaIdTest.java`: JUnit tests to verify all validation aspects (length, date, gender, citizenship, checksum).
 - `App.java`: A Swing-based UI for users to input an ID and view detailed validation results.
 
