@@ -22,6 +22,9 @@ The project consists of three main files:
 - Validates South African ID numbers with detailed feedback.
 - Comprehensive unit tests ensuring 100% pass rate for all validation criteria.
 
+## GUI
+![Demo Screenshot](images/valid.png)
+
 ## Setup Instructions
 
 1. **Clone the Repository**:
